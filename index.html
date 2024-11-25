@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Salomé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Variables CSS */
+        :root {
+            --background-color: #161616;
+            --main-color: #d8d8d8;
+            --accent-color: #f9c8d6;
+            --container-bg: #2b2b2b;
+            --section-bg: #3e3e3e;
+            --font-family-main: 'Raleway', cyrillic;
+            --font-family-heading: 'Playfair Display', serif;
+        }
+
+        /* Reseteo y estilo base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-main);
+            background-color: var(--background-color);
+            color: var(--main-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Contenedor principal */
+        .profile-container {
+            background: linear-gradient(135deg, #3e3e3e, var(--container-bg));
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+        }
+
+        /* Cabecera */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            font-family: var(--font-family-heading);
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            background-color: var(--accent-color);
+            color: #161616;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav a:hover {
+            background-color: #f2a6b7;
+            transform: translateY(-2px);
+        }
+
+        /* Perfil - imagen y detalles */
+        .profile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            z-index: 1;
+        }
+
+        .profile .image-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid var(--accent-color);
+            box-shadow: 0 0 15px rgba(0, 0 , 0, 0.8);
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+        }
+
+        .profile .info {
+            max-width : 400px;
+            color: #f2f2f2;
+        }
+
+        .profile .info h1 {
+            font-size: 3rem;
+            color: var(--accent-color);
+            font-family: var(--font-family-heading);
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile .info p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Sección de contenido */
+        section {
+            background-color: var(--section-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+            display: none; /* Ocultar secciones por defecto */
+            transition: all 0.3s ease;
+        }
+
+        section.active {
+            display: block; /* Mostrar sección activa */
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: var(--main-color);
+            line-height: 1.6;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: var(--main-color);
+            text-align: center;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>    <style>
+        /* Color del enlace cuando no ha sido visitado */
+        a:link {
+            color: #fcfcfc; /* Rosa claro */
+        }
+
+        /* Color del enlace cuando ha sido visitado */
+        a:visited {
+            color: #ff558e; /* Rosa más oscuro */
+        }
+
+        /* Color del enlace cuando el cursor pasa sobre él */
+        a:hover {
+            color: #c46698; /* Rosa brillante */
+            text-decoration: underline; /* Subrayado */
+        }
+
+        /* Color del enlace cuando se hace clic en él */
+        a:active {
+            color: #ce449b; /* Rosa más intenso */
+        }
+    </style>
+</head>
+<body>
+    </style>
+</head>
+<body>
+
+    <div class="profile-container fade-in">
+        <!-- Header -->
+        <header>
+            <div class="logo">⋆౨ৎ˚⟡˖ ࣪</div>
+            <nav class="nav">
+                <a href="#" data-target="personality">Acerca de mi</a>
+                <a href="#" data-target="spectrum">Cursos</a>
+                <a href="#" data-target="interests">Compañeros</a>
+                <a href="#" data-target="Contact">Contactame</a>
+            </nav>
+        </header>
+
+        <!-- Perfil de Salomé -->
+        <div class="profile fade-in">
+            <div class="image-container">
+                <img src="imagen ro.jpg">
+            </div>
+            <div class="info">
+                <h1>Hola!</h1>
+                <p>Soy Rocio Nicole y esta es mi pagina web! :¨ ·.· ¨:
+                ⠀⠀⠀⠀ ⠀⠀  ⠀⠀ ⠀⠀ ⠀⠀⠀ ⠀⠀ ⠀ ⠀⠀`· . ꔫ</p>
+                
+            </div>
+        </div>
+
+        <!-- Secciones de contenido -->
+        <section id="personality" class="section fade-in active">
+            <h2>𝄞𓂃 ࣪˖ ִֶָ  Sobre mi 𓈈⭒♬ ﾟ. </h2>
+            <p>Soy estudiante de la carrera de ciencia de la computacion en la Universidad San Pablo en Arequipa, actualmente me encuentro en el segundo semestre.</p>
+            ⠀⠀
+            <h3>˗ˏˋ ★ˎˊ˗ Hobbies: </h3>
+            ⠀⠀
+            <li>🌍 <strong>Viajar:</strong> Siempre me emociona la idea de explorar nuevos lugares, conocer personas y probar comida diferente, ya que cada viaje es una aventura única ^^.</li>
+            ⠀⠀
+            <li>🎬 <strong>Ver series y películas:</strong> Disfruto mucho ver series y películas, especialmente aquellas que me permiten reflexionar o simplemente pasar un buen rato.</li>
+            ⠀⠀
+            <li>💪 <strong>Ejercicio :</strong> Practico deportes como el yoga (a mis 10 años practicaba gimnasia artistica) para mantenerme activa y saludable.</li>
+            ⠀⠀
+            <li>📸 <strong>Fotografía:</strong> Tomar fotos me permite capturar momentos especiales y apreciar los pequeños detalles de mi dia a dia •ᴗ•. Aqui puedes ver algunas fotos: <a href="disc\fotos.html" target="_blank"> ˙✧˖°📷 ༘ ⋆｡˚ </a></li>
+            ⠀⠀
+            <li>💻 <strong>Crear proyectos:</strong> Desde primero de secundaria, siempre me ha interesado la programación. Ahora me divierto creando proyectos, ya sea un sitio web o realizar pequeños retos, y siempre trato de aprender algo nuevo.</li>
+            ⠀⠀
+            <li>🎶 <strong>Escuchar música:</strong> Me encanta escuchar música y cantar mis canciones favoritas. Desde lo más tranquilo hasta lo más animado, tiene el poder de cambiar mi estado de ánimo en segundos. ദ്ദി๑>؂•̀. </li>
+            ⠀⠀
+        </section>
+
+        <section id="spectrum" class="section fade-in">
+            <h2>‼⋆˚࿔ Cursos 𝜗𝜚˚⋆</h2>
+            <p> Aca puedes encontrar todos los cursos que he llevado, dale click a cada curso para conocer a mis profesores! </p>
+            ⠀⠀
+            <h3>Cursos Realizados: </h3>
+            ⠀⠀
+            <p>♡ <a href="https://www.linkedin.com/in/angel-rodriguez-cruz-58b78b85/?originalSubdomain=pe" target="_blank"> Comunicación </a></p>
+            <p>♡ <a href="https://ctivitae.concytec.gob.pe/appDirectorioCTI/VerDatosInvestigador.do?id_investigador=21108" target="_blank"> Estructura Discretas I </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/lilian-moscoso-prieto-53345390/?originalSubdomain=pe"> Introducción a la Vida Universitaria </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/vidal-martin-bolaños-ugarte-2b495a99/" target="_blank"> Matemática I </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/mg-sandra-rocío-romaní-paredes-651b3036/ "> Metodología del Estudio </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/yessenia-yari-b4778139/" target="_blank"> Programacion de Videojuegos </a></p>
+            ⠀⠀
+            <h3>Cursos Actuales: </h3>
+            ⠀⠀
+            <p>♡ <a href="https://www.linkedin.com/in/luis-fernando-díaz-basurco-48098333/" target="_blank">Estructura Discretas II </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">Introducción de Ciencia de la Computación </a></p>
+            <p>♡ <a href="https://www.linkedin.com/in/henry-huamán-navarro-964015108/" target="_blank"> Introducción a la Filosofía </a></p>
+            <p>♡ <a href=https://www.linkedin.com/in/jorge-lovón-caparó-15144b20/ target="_blank"> Apreciación Musical </a></p>
+            <p>♡ <a href=https://www.linkedin.com/in/yanet-silvana-chirinos-aviles-41a3b5177/ target="_blank"> Matemática II </a></p>
+            <p>♡ <a href=https://orcid.org/0000-0001-6025-8685 target="_blank"> Cálculo I </a></p>
+        
+        </section>
+
+        <section id="interests" class="section fade-in">
+            <h2>°❀⋆. Compañeros ೃ࿔*:･</h2>
+            <p>Dale click y te enviara a la pagina web de mis compañeros!</p>
+            <p>୨ৎ <a href=https://aniballa.github.io/Anibal-Lajo-Atayupanqui/ target="_blank"> Anibal Lajo Atayupanqui </a></p>
+        </section>
+
+        <section id="Contact" class="section fade-in">
+            <h2>⋆ ˚｡ Contactame ⋆୨୧˚</h2>
+            <p> Si deseas comunicarte conmigo, puedes hacerlo a través de los siguientes medios! </p>
+            ⠀⠀
+            <div class="social-icons">
+                <!-- Instagram -->
+                <a href="https://mail.google.com/mail/u/2/#inbox?compose=DmwnWrRnXfHPxFwgGQVwzzBdXKtjfLkgcHpXjSSHbDSVjGFJvvrgNnHKwPtgVDkcPrMnZqdsHvQG" title="Correo">
+                    <img src="email-logo.png" alt="Correo">
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/rocio-nicole-manzanedo-punto-b9474621a/?originalSubdomain=pe" target="_blank" title="LinkedIn">
+                    <img src="linkedin-logo.png" alt="LinkedIn">
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/Choco-c4t?tab=overview&from=2024-11-01&to=2024-11-24" target="_blank" title="GitHub">
+                    <img src="github-logo.png" alt="GitHub">
+                </a>
+                <!-- Correo electrónico -->      
+                <a href="https://i.pinimg.com/originals/e8/28/ae/e828ae616854b9266954c2655f650bf2.gif" target="_blank" title="Instagram">
+                    <img src="instagram-logo.png" alt="Instagram">
+                </a>
+        
+        <!-- Estilos CSS -->
+        <style>
+            .contact-section {
+                text-align: center;
+                margin-top: 20px;
+                padding: 20px;
+                background-color: #2e2e2e;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .contact-section h2 {
+                color: #ff87d1;
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+            .contact-section p {
+                color: #ff87d1;
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            .social-icons {
+                display: flex;
+                justify-content: center;
+                gap: 15px; /* Espaciado entre íconos */
+            }
+            .social-icons a img {
+                width: 50px; /* Tamaño del logo */
+                height: 50px;
+                border-radius: 50%; /* Forma circular */
+                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+            }
+            .social-icons a img:hover {
+                transform: scale(1.1); /* Efecto de agrandado */
+                box-shadow: 0 8px 16px rgb(255, 255, 255); /* Sombra brillante al hover */
+            }
+        </style>
+
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 Rocio | ♪ ˖ ⊹ ♬˚₊‧ </p>
+        </footer>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('data-target');
+                
+ sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
